@@ -52,12 +52,10 @@ if CLIENT then
                 label:SetText("E-Warns Menu içeriği buraya eklenecek.")
                 label:SizeToContents()
 
-                -- Oyuncu listesi için bir panel oluştur
                 local playerList = vgui.Create("DScrollPanel", frame)
                 playerList:SetPos(10, 60)
                 playerList:SetSize(200, 200)
 
-                -- Aktif oyuncuları al
                 local players = player.GetAll()
 
                 for _, player in pairs(players) do
@@ -76,11 +74,9 @@ if CLIENT then
                     playerNameLabel:SetText(playerName)
                     playerNameLabel:SizeToContents()
 
-                    -- Oyuncu adının uzunluğuna göre panelin genişliğini ayarla
                     local panelWidth = playerNameLabel:GetWide() + 50
                     playerPanel:SetWide(math.max(panelWidth, 100))
 
-                    -- Oyuncunun yanına buton ekle
                     local warnButton = vgui.Create("DButton", playerPanel)
                     warnButton:SetPos(panelWidth - 40, 0)
                     warnButton:SetText("Warns")
