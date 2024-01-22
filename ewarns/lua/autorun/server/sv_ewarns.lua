@@ -1,5 +1,3 @@
--- SERVER SIDE (sv_ewarns.lua)
-
 if SERVER then
     util.AddNetworkString("OpenWarnMenu")
     util.AddNetworkString("OpenPlayerWarnMenu")
@@ -46,7 +44,6 @@ if SERVER then
 
     hook.Add("Initialize", "LoadPlayerWarnsOnInit", LoadPlayerWarns)
     
-    -- PlayerInitialSpawn kancasını kullanarak uyarıları gönder
     hook.Add("PlayerInitialSpawn", "LoadPlayerWarnsOnSpawn", function(ply)
         local playerID = GetPlayerID(ply)
         local warns = playerWarns[playerID] or {}
